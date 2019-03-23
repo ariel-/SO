@@ -27,17 +27,17 @@
  * en el que podemos enviar estructuras complejas.
  */
 int main(int argc, char* argv[]) {
-	if (argc != 2) {
-		printf("Argumentos invalidos\n");
-		return EXIT_FAILURE;
-	}
+    if (argc != 2) {
+        printf("Argumentos invalidos\n");
+        return EXIT_FAILURE;
+    }
 
-	char* file_name = argv[1];
+    char* file_name = argv[1];
 
-	t_spock* spock = spock_create();
-	spock_enviar_a_mision(spock, file_name);
-	spock_print(spock);
-	spock_destroy(spock);
+    t_spock* spock = spock_create();
+    spock_enviar_a_mision(spock, file_name);
+    spock_print(spock);
+    spock_destroy(spock);
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

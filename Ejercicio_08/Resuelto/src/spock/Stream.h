@@ -18,8 +18,8 @@
 #define STREAM_H_
 
 typedef struct {
-	char* data;
-	int size;
+    char* data;
+    int size;
 } t_stream;
 
 t_stream* stream_create(int size);

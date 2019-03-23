@@ -20,8 +20,8 @@
 #include <stdio.h>
 
 typedef struct {
-	char* nombre;
-	double precio;
+    char* nombre;
+    double precio;
 } t_item;
 
 t_item* item_create(char* nombre, double precio);

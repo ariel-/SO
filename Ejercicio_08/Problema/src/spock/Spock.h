@@ -23,11 +23,11 @@
 #include "../Collections/list.h"
 
 typedef struct {
-	char* nombre;
-	char edad;
-	t_list* villanos;
-	t_mascota* mascota;
-	t_mision* mision;
+    char* nombre;
+    char edad;
+    t_list* villanos;
+    t_mascota* mascota;
+    t_mision* mision;
 }__attribute__((packed)) t_spock;
 
 t_spock* spock_create();

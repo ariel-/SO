@@ -23,10 +23,10 @@
  * @DESC: Crea y devuelve un puntero a una cola
  */
 t_queue *queue_create() {
-	t_queue* queue = malloc(sizeof(t_queue));
-	t_list* elements = list_create();
-	queue->elements = elements;
-	return queue;
+    t_queue* queue = malloc(sizeof(t_queue));
+    t_list* elements = list_create();
+    queue->elements = elements;
+    return queue;
 }
 
 /*
@@ -34,7 +34,7 @@ t_queue *queue_create() {
  * @DESC: Elimina todos los nodos de la cola.
  */
 void queue_clean(t_queue *self) {
-	list_clean(self->elements);
+    list_clean(self->elements);
 }
 
 /*
@@ -42,7 +42,7 @@ void queue_clean(t_queue *self) {
  * @DESC: Elimina todos los elementos de la cola.
  */
 void queue_clean_and_destroy_elements(t_queue *self, void(*element_destroyer)(void*)) {
-	list_clean_and_destroy_elements(self->elements, element_destroyer);
+    list_clean_and_destroy_elements(self->elements, element_destroyer);
 }
 
 /*
@@ -50,18 +50,18 @@ void queue_clean_and_destroy_elements(t_queue *self, void(*element_destroyer)(vo
  * @DESC: Destruye una cola.
  */
 void queue_destroy(t_queue *self) {
-	list_destroy(self->elements);
-	free(self);
+    list_destroy(self->elements);
+    free(self);
 }
 
 /*
  * @NAME: queue_destroy_and_destroy_elements
  * @DESC: Destruye una cola, recibiendo como argumento el metodo encargado de liberar cada
- * 		elemento de la cola.
+ *      elemento de la cola.
  */
 void queue_destroy_and_destroy_elements(t_queue *self, void(*element_destroyer)(void*)) {
-	list_destroy_and_destroy_elements(self->elements, element_destroyer);
-	free(self);
+    list_destroy_and_destroy_elements(self->elements, element_destroyer);
+    free(self);
 }
 
 /*
@@ -69,7 +69,7 @@ void queue_destroy_and_destroy_elements(t_queue *self, void(*element_destroyer)(
  * @DESC: Agrega un elemento al final de la cola
  */
 void queue_push(t_queue *self, void *element) {
-	list_add(self->elements, element);
+    list_add(self->elements, element);
 }
 
 /*
@@ -77,7 +77,7 @@ void queue_push(t_queue *self, void *element) {
  * @DESC: quita el primer elemento de la cola
  */
 void *queue_pop(t_queue *self) {
-	return list_remove(self->elements, 0);
+    return list_remove(self->elements, 0);
 }
 
 /*
@@ -85,7 +85,7 @@ void *queue_pop(t_queue *self) {
  * @DESC: Devuelve el primer elemento de la cola sin extraerlo
  */
 void *queue_peek(t_queue *self) {
-	return list_get(self->elements, 0);
+    return list_get(self->elements, 0);
 }
 
 /*
@@ -93,7 +93,7 @@ void *queue_peek(t_queue *self) {
  * @DESC: Devuelve la cantidad de elementos de la cola
  */
 int queue_size(t_queue* self) {
-	return list_size(self->elements);
+    return list_size(self->elements);
 }
 
 /*
@@ -101,7 +101,7 @@ int queue_size(t_queue* self) {
  * @DESC: Verifica si la cola esta vacía
  */
 int queue_is_empty(t_queue *self) {
-	return list_is_empty(self->elements);
+    return list_is_empty(self->elements);
 }
 
 

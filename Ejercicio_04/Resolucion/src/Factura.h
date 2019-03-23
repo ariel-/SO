@@ -26,11 +26,11 @@
 typedef enum {A, B, C} t_factura_tipo;
 
 typedef struct {
-	char numero;
-	t_factura_tipo tipo;
-	t_cliente* cliente;
-	t_list* items;
-	double total;
+    char numero;
+    t_factura_tipo tipo;
+    t_cliente* cliente;
+    t_list* items;
+    double total;
 } t_factura;
 
 t_factura* factura_crear(char numero, t_factura_tipo tipo, t_cliente* cliente, double total);

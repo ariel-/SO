@@ -20,8 +20,8 @@
 #include <stdint.h>
 
 typedef struct {
-	char nombre[25];
-	uint16_t edad;
+    char nombre[25];
+    uint16_t edad;
 }__attribute__((packed)) t_villano;
 
 t_villano* villano_create(char* nombre, int edad);

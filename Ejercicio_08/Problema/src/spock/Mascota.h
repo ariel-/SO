@@ -20,9 +20,9 @@
 #include <stdbool.h>
 
 typedef struct {
-	char* apodo;
-	char edad;
-	bool da_vueltas;
+    char* apodo;
+    char edad;
+    bool da_vueltas;
 }__attribute__((packed)) t_mascota;
 
 t_mascota* mascota_crear(char* apodo, bool daVueltas, int edad);

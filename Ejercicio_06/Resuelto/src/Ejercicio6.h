@@ -29,8 +29,8 @@
 #include "Collections/queue.h"
 
 typedef struct {
-	const char* pc; //PC que hizo el pedido de impresion
-	char* data;
+    const char* pc; //PC que hizo el pedido de impresion
+    char* data;
 } t_print_job;
 
 void trabajar(void * args);

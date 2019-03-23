@@ -20,9 +20,9 @@
 #include <stdio.h>
 
 typedef struct {
-	int codigo_cliente;
-	char* nombre;
-	char* apellido;
+    int codigo_cliente;
+    char* nombre;
+    char* apellido;
 } t_cliente;
 
 t_cliente* cliente_create(char* nombre, char* apellido, int codigo_cliente);

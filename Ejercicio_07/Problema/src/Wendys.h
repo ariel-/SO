@@ -21,20 +21,20 @@
 #include "Collections/queue.h"
 
 typedef struct {
-	bool embalada;
-	t_queue* ingredientes;
+    bool embalada;
+    t_queue* ingredientes;
 } t_hamburguesa;
 
 typedef enum {
-	PANINFERIOR = 0,
-	CONDIMENTOS = 1,
-	CARNE = 2,
-	QUESO = 3,
-	PANCETA = 4,
-	LECHUGA = 5,
-	TOMATE = 6,
-	PANSUPERIOR = 7,
-	FIN = 8
+    PANINFERIOR = 0,
+    CONDIMENTOS = 1,
+    CARNE = 2,
+    QUESO = 3,
+    PANCETA = 4,
+    LECHUGA = 5,
+    TOMATE = 6,
+    PANSUPERIOR = 7,
+    FIN = 8
 } t_Ingredientes;
 
 void llegada_nuevo_cliente();

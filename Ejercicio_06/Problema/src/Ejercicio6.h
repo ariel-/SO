@@ -30,8 +30,8 @@ void  mandar_a_imprimir(t_queue* jobQueue);
 char* crear_data();
 
 typedef struct {
-	int pc; //PC que hizo el pedido de impresion
-	char* data; //Datos a imprimir
+    int pc; //PC que hizo el pedido de impresion
+    char* data; //Datos a imprimir
 } t_print_job;
 
 #endif /* EJERCICIO6_H_ */

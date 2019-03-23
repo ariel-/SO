@@ -23,8 +23,8 @@
 #include "stdint.h"
 
 typedef struct {
-	char* info_codificada;
-	uint32_t longitud;
+    char* info_codificada;
+    uint32_t longitud;
 }__attribute__((packed)) t_mision;
 
 t_mision* mision_crear(char* mensaje);
