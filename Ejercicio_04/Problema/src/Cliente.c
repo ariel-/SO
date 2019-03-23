@@ -22,16 +22,21 @@
 
 #define CLIENTE_NAME_MAX_LENGTH 256
 
-t_cliente* cliente_create(char* nombre, char* apellido, int codigo_cliente) {
+t_cliente* cliente_create(char const* nombre, char const* apellido, int codigo_cliente) {
     t_cliente* cliente = malloc(sizeof(t_cliente));
-    cliente->nombre = nombre;
-    cliente->apellido = apellido;
-    cliente->codigo_cliente = codigo_cliente;
+    cliente->nombre   = malloc(strlen(nombre) + 1);
+    strcpy(cliente->nombre, nombre);
 
+    cliente->apellido = malloc(strlen(apellido) + 1);
+    strcpy(cliente->apellido, apellido);
+
+    cliente->codigo_cliente = codigo_cliente;
     return cliente;
 }
 
 void cliente_destroy(t_cliente* cliente) {
+    free(cliente->nombre);
+    free(cliente->apellido);
     free(cliente);
 }
 

@@ -25,7 +25,7 @@
         int elements_count;
     } t_list;
 
-    t_list * list_create();
+    t_list * list_create(void);
 
     void list_destroy(t_list *);
     void list_destroy_and_destroy_elements(t_list*, void(*element_destroyer)(void*));

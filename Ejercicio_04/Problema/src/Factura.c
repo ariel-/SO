@@ -30,6 +30,7 @@ t_factura* factura_crear(char numero, t_factura_tipo tipo,
 }
 
 void factura_destroy(t_factura* factura) {
+    list_destroy_and_destroy_elements(factura->items, (void(*)(void*))&item_destroy);
     cliente_destroy(factura->cliente);
     free(factura);
 }
@@ -54,29 +55,21 @@ void factura_print(t_factura* factura) {
     printf("Tipo: %u\n", factura->tipo);
     printf("Cliente Codigo: %d\n", factura->cliente->codigo_cliente);
     printf("Cliente Nombre: %s, %s\n", factura->cliente->apellido, factura->cliente->nombre);
-    list_iterate(factura->items, print_item);
+    list_iterate(factura->items, &print_item);
     printf("Total: %lf\n", factura->total);
 }
 
 t_factura* factura_from_file(FILE* file) {
-    char numero = 0;
-    t_factura_tipo tipo;
+    int numero; // %d espera int :P
+    unsigned tipo;
     double total;
     int cantidad_items;
-    t_cliente* cliente;
-    t_item* item;
-    int i;
 
     fscanf(file, "%d,%u,%lf,%d\n", &numero, &tipo, &total, &cantidad_items);
-    cliente = malloc(sizeof(t_cliente));
-    cliente = cliente_from_file(file);
-    t_factura* factura = factura_crear(numero, tipo, cliente, total);
+    t_factura* factura = factura_crear(numero, (t_factura_tipo)tipo, cliente_from_file(file), total);
 
-    for (i = 0; i < cantidad_items; ++i) {
-        item = malloc(sizeof(t_item));
-        item = item_from_file(file);
-        factura_add_item(factura, item);
-    }
+    for (int i = 0; i < cantidad_items; ++i)
+        factura_add_item(factura, item_from_file(file));
 
     return factura;
 }

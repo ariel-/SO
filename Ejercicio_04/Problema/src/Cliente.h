@@ -25,7 +25,7 @@ typedef struct {
     char* apellido;
 } t_cliente;
 
-t_cliente* cliente_create(char* nombre, char* apellido, int codigo_cliente);
+t_cliente* cliente_create(char const* nombre, char const* apellido, int codigo_cliente);
 void cliente_destroy(t_cliente* cliente);
 
 t_cliente* cliente_from_file(FILE* file);

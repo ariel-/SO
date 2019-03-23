@@ -15,16 +15,16 @@
  */
 
 #include "Factura.h"
-
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
 
-int main(int argc, char **argv) {
+int main(void)
+{
     char* folder = "resources";
     char* file_name = "ticket.txt";
-    char* absolute_path = malloc(strlen(folder) + strlen("/") + strlen(file_name));
+    char* absolute_path = malloc(strlen(folder) + strlen("/") + strlen(file_name) + 1);
     sprintf(absolute_path, "%s/%s", folder, file_name);
 
     FILE* file = fopen(absolute_path, "r");
@@ -37,4 +37,3 @@ int main(int argc, char **argv) {
 
     return EXIT_SUCCESS;
 }
-

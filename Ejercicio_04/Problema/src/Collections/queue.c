@@ -22,7 +22,7 @@
  * @NAME: queue_create
  * @DESC: Crea y devuelve un puntero a una cola
  */
-t_queue *queue_create() {
+t_queue *queue_create(void) {
     t_queue* queue = malloc(sizeof(t_queue));
     t_list* elements = list_create();
     queue->elements = elements;
