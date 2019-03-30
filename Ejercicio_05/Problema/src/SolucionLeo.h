@@ -17,6 +17,7 @@
 #ifndef SOLUCIONLEO_H_
 #define SOLUCIONLEO_H_
 
+#define _BSD_SOURCE //for usleep
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
@@ -24,8 +25,8 @@
 #include <sys/types.h>
 
 void compras_mensuales(void* args);
-int consulta_saldo();
-void hacer_compras(int monto, const char* nombre);
+int consulta_saldo(void);
+void hacer_compras(int monto, char const* nombre);
 void comprar(int monto);
 
 #endif /* SOLUCIONLEO_H_ */
